@@ -20,10 +20,10 @@ services:
       - "0.0.0.0:53:53/tcp"
       - "0.0.0.0:53:53/udp"
       - "0.0.0.0:67:67/udp" # Only required if you are using Pi-hole as your DHCP server
-      - "8080:80/tcp"
+      - "0.0.0.0:8080:80/tcp"
     environment:
       TZ: 'America/Chicago'
-    WEBPASSWORD: 'password' #enter password or will be randomised
+      WEBPASSWORD: 'password' #enter password or will be randomised
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole:/etc/pihole'
